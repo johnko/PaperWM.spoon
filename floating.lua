@@ -31,7 +31,9 @@ end
 
 ---restore floating windows from persistant settings, filtering for valid windows
 function Floating.restoreFloating()
-    local persisted = hs.settings.get(IsFloatingKey) or {}
+    -- Commented out because i don't want floating windows persisted
+    -- local persisted = hs.settings.get(IsFloatingKey) or {}
+    local persisted = {}
     for _, id in ipairs(persisted) do
         local window = Window.get(id)
         if window and Floating.PaperWM.window_filter:isWindowAllowed(window) then

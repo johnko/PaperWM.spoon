@@ -96,8 +96,9 @@ function Tiling.tileSpace(space)
 
     local anchor_index = Tiling.PaperWM.state.windowIndex(anchor_window)
     if not anchor_index then
-        Tiling.PaperWM.logger.e("anchor index not found, refreshing windows")
-        Tiling.PaperWM.windows.refreshWindows() -- try refreshing the windows
+        -- Commented out hs.screen.watcher because i want specific order
+        -- Tiling.PaperWM.logger.e("anchor index not found, refreshing windows")
+        -- Tiling.PaperWM.windows.refreshWindows() -- try refreshing the windows
         return                                  -- bail
     end
 

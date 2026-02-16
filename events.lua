@@ -31,8 +31,9 @@ local screen_watcher = Screen.watcher.new((function()
         if not pending_timer then
             pending_timer = Timer.doAfter(Window.animationDuration, function()
                 pending_timer = nil
-                Events.PaperWM.logger.d("refreshing window layout on screen change")
-                Events.PaperWM.windows.refreshWindows()
+                -- Commented out hs.screen.watcher because i want specific order
+                -- Events.PaperWM.logger.d("refreshing window layout on screen change")
+                -- Events.PaperWM.windows.refreshWindows()
             end)
         end
     end
